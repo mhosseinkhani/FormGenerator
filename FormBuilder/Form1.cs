@@ -23,7 +23,11 @@ namespace FormBuilder
 
         private void buttonStepOne_Click(object sender, EventArgs e)
         {
-            var stepOne = txtBoxInput.Text.Split(";").ToArray();
+            var stepOne = txtBoxInput.Text
+                .Replace(",",";")
+                .Replace("\"", "")
+                .Replace("'", "")
+                .Split(";").ToArray();
             listBoxItems.Items.AddRange(stepOne);
 
         }
