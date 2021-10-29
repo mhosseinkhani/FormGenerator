@@ -30,7 +30,7 @@ namespace FormBuilder
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.txtBoxOutPut = new System.Windows.Forms.TextBox();
+            this.txtBoxOutPutUi = new System.Windows.Forms.TextBox();
             this.btnCommand = new System.Windows.Forms.Button();
             this.txtBoxInput = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,24 +46,21 @@ namespace FormBuilder
             this.buttonStepTwo = new System.Windows.Forms.Button();
             this.buttonStepOne = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.textBoxOutPutForm = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewControls)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtBoxOutPut
+            // txtBoxOutPutUi
             // 
-            this.txtBoxOutPut.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtBoxOutPut.Location = new System.Drawing.Point(12, 453);
-            this.txtBoxOutPut.Multiline = true;
-            this.txtBoxOutPut.Name = "txtBoxOutPut";
-            this.txtBoxOutPut.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtBoxOutPut.Size = new System.Drawing.Size(872, 309);
-            this.txtBoxOutPut.TabIndex = 0;
+            this.txtBoxOutPutUi.Location = new System.Drawing.Point(12, 453);
+            this.txtBoxOutPutUi.Multiline = true;
+            this.txtBoxOutPutUi.Name = "txtBoxOutPutUi";
+            this.txtBoxOutPutUi.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.txtBoxOutPutUi.Size = new System.Drawing.Size(417, 309);
+            this.txtBoxOutPutUi.TabIndex = 0;
             // 
             // btnCommand
             // 
-            this.btnCommand.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCommand.Location = new System.Drawing.Point(435, 409);
             this.btnCommand.Name = "btnCommand";
             this.btnCommand.Size = new System.Drawing.Size(349, 38);
@@ -211,6 +208,17 @@ namespace FormBuilder
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
+            // textBoxOutPutForm
+            // 
+            this.textBoxOutPutForm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxOutPutForm.Location = new System.Drawing.Point(435, 453);
+            this.textBoxOutPutForm.Multiline = true;
+            this.textBoxOutPutForm.Name = "textBoxOutPutForm";
+            this.textBoxOutPutForm.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxOutPutForm.Size = new System.Drawing.Size(449, 309);
+            this.textBoxOutPutForm.TabIndex = 0;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -226,7 +234,8 @@ namespace FormBuilder
             this.Controls.Add(this.buttonStepOne);
             this.Controls.Add(this.buttonStepTwo);
             this.Controls.Add(this.btnCommand);
-            this.Controls.Add(this.txtBoxOutPut);
+            this.Controls.Add(this.textBoxOutPutForm);
+            this.Controls.Add(this.txtBoxOutPutUi);
             this.Text = "Form Builder";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewControls)).EndInit();
             this.ResumeLayout(false);
@@ -236,7 +245,7 @@ namespace FormBuilder
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtBoxOutPut;
+        private System.Windows.Forms.TextBox txtBoxOutPutUi;
         private System.Windows.Forms.Button btnCommand;
         private System.Windows.Forms.TextBox txtBoxInput;
         private System.Windows.Forms.Label label1;
@@ -252,6 +261,7 @@ namespace FormBuilder
         private System.Windows.Forms.DataGridViewComboBoxColumn CssCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn InRow;
         private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.TextBox textBoxOutPutForm;
     }
 }
 

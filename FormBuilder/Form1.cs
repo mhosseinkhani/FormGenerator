@@ -59,7 +59,7 @@ namespace FormBuilder
 
         private void btnCommand_Click(object sender, EventArgs e)
         {
-            var formControls = new System.Collections.Generic.List<FormControlsMaker.FormControl>();
+            var formControls = new List<FormControlsMaker.FormControl>();
 
             foreach (DataGridViewRow row in dataGridViewControls.Rows)
             {
@@ -77,14 +77,24 @@ namespace FormBuilder
                 formControls.Add(formControl);
             }
 
-            txtBoxOutPut.Text = "";
+            txtBoxOutPutUi.Text = "";
             formControls.GroupBy(a => a.Row).ToList().ForEach(p =>
               {
-                  txtBoxOutPut.Text += @"<div class=""form-group row"">";
-                  txtBoxOutPut.Text += string.Join(System.Environment.NewLine, FormControlsMaker.MakeControls(p.ToArray()));
-                  txtBoxOutPut.Text += @"</div>";
-                  txtBoxOutPut.Text += System.Environment.NewLine;
+                  txtBoxOutPutUi.Text += @"<div class=""form-group row"">";
+                  txtBoxOutPutUi.Text += string.Join(System.Environment.NewLine, FormControlsMaker.MakeControls(p.ToArray()));
+                  txtBoxOutPutUi.Text += @"</div>";
+                  txtBoxOutPutUi.Text += System.Environment.NewLine;
               });
+
+          
+            var resultForm=new List<string>();
+            formControls.ForEach(p =>
+            { 
+                var item =
+                    $"{p.Name}:[this.model.{p.Name}]";
+               resultForm.Add(item);
+            });
+            textBoxOutPutForm.Text = string.Join(","+ System.Environment.NewLine, resultForm);
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
