@@ -131,7 +131,7 @@ namespace FormBuilder.Shared
 ";
 
         public const string CheckBox = @"  
-        <div class=""col-lg-#controlCol"">
+        <div class=""col-lg-#controlCol  mt-10"">
             <mat-checkbox formControlName=""includedInSanctionedPersonsList"">#controlTitle
             </mat-checkbox>
               <div class=""invalid-feedback"" *ngIf=""controlHasError('required', '#contorlName')"">فیلد اجباری می باشد</div>
