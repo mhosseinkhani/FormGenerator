@@ -38,10 +38,6 @@ namespace FormBuilder
             this.label3 = new System.Windows.Forms.Label();
             this.listBoxItems = new System.Windows.Forms.ListBox();
             this.dataGridViewControls = new System.Windows.Forms.DataGridView();
-            this.buttonStepTwo = new System.Windows.Forms.Button();
-            this.buttonStepOne = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.textBoxOutPutForm = new System.Windows.Forms.TextBox();
             this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,11 +45,18 @@ namespace FormBuilder
             this.CssCol = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.InRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlaceHolder = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.buttonStepTwo = new System.Windows.Forms.Button();
+            this.buttonStepOne = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.textBoxOutPutForm = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewControls)).BeginInit();
             this.SuspendLayout();
             // 
             // txtBoxOutPutUi
             // 
+            this.txtBoxOutPutUi.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBoxOutPutUi.Location = new System.Drawing.Point(12, 453);
             this.txtBoxOutPutUi.Multiline = true;
             this.txtBoxOutPutUi.Name = "txtBoxOutPutUi";
@@ -138,49 +141,6 @@ namespace FormBuilder
             this.dataGridViewControls.Size = new System.Drawing.Size(720, 379);
             this.dataGridViewControls.TabIndex = 5;
             // 
-            // buttonStepTwo
-            // 
-            this.buttonStepTwo.Location = new System.Drawing.Point(217, 409);
-            this.buttonStepTwo.Name = "buttonStepTwo";
-            this.buttonStepTwo.Size = new System.Drawing.Size(212, 38);
-            this.buttonStepTwo.TabIndex = 1;
-            this.buttonStepTwo.Text = "Step Two";
-            this.buttonStepTwo.UseVisualStyleBackColor = true;
-            this.buttonStepTwo.Click += new System.EventHandler(this.buttonStepTwo_Click);
-            // 
-            // buttonStepOne
-            // 
-            this.buttonStepOne.Location = new System.Drawing.Point(12, 409);
-            this.buttonStepOne.Name = "buttonStepOne";
-            this.buttonStepOne.Size = new System.Drawing.Size(199, 38);
-            this.buttonStepOne.TabIndex = 1;
-            this.buttonStepOne.Text = "Step One";
-            this.buttonStepOne.UseVisualStyleBackColor = true;
-            this.buttonStepOne.Click += new System.EventHandler(this.buttonStepOne_Click);
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSave.Location = new System.Drawing.Point(789, 409);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(366, 38);
-            this.buttonSave.TabIndex = 6;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.UseVisualStyleBackColor = true;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
-            // textBoxOutPutForm
-            // 
-            this.textBoxOutPutForm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxOutPutForm.Location = new System.Drawing.Point(435, 453);
-            this.textBoxOutPutForm.Multiline = true;
-            this.textBoxOutPutForm.Name = "textBoxOutPutForm";
-            this.textBoxOutPutForm.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxOutPutForm.Size = new System.Drawing.Size(720, 309);
-            this.textBoxOutPutForm.TabIndex = 0;
-            // 
             // Order
             // 
             this.Order.FillWeight = 40F;
@@ -249,6 +209,50 @@ namespace FormBuilder
             this.PlaceHolder.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.PlaceHolder.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.PlaceHolder.Width = 70;
+            // 
+            // buttonStepTwo
+            // 
+            this.buttonStepTwo.Location = new System.Drawing.Point(217, 409);
+            this.buttonStepTwo.Name = "buttonStepTwo";
+            this.buttonStepTwo.Size = new System.Drawing.Size(212, 38);
+            this.buttonStepTwo.TabIndex = 1;
+            this.buttonStepTwo.Text = "Step Two";
+            this.buttonStepTwo.UseVisualStyleBackColor = true;
+            this.buttonStepTwo.Click += new System.EventHandler(this.buttonStepTwo_Click);
+            // 
+            // buttonStepOne
+            // 
+            this.buttonStepOne.Location = new System.Drawing.Point(12, 409);
+            this.buttonStepOne.Name = "buttonStepOne";
+            this.buttonStepOne.Size = new System.Drawing.Size(199, 38);
+            this.buttonStepOne.TabIndex = 1;
+            this.buttonStepOne.Text = "Step One";
+            this.buttonStepOne.UseVisualStyleBackColor = true;
+            this.buttonStepOne.Click += new System.EventHandler(this.buttonStepOne_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSave.Location = new System.Drawing.Point(789, 409);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(366, 38);
+            this.buttonSave.TabIndex = 6;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // textBoxOutPutForm
+            // 
+            this.textBoxOutPutForm.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxOutPutForm.Location = new System.Drawing.Point(435, 453);
+            this.textBoxOutPutForm.Multiline = true;
+            this.textBoxOutPutForm.Name = "textBoxOutPutForm";
+            this.textBoxOutPutForm.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBoxOutPutForm.Size = new System.Drawing.Size(720, 309);
+            this.textBoxOutPutForm.TabIndex = 0;
             // 
             // FormMain
             // 
