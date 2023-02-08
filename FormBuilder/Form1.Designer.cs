@@ -38,15 +38,16 @@ namespace FormBuilder
             this.label3 = new System.Windows.Forms.Label();
             this.listBoxItems = new System.Windows.Forms.ListBox();
             this.dataGridViewControls = new System.Windows.Forms.DataGridView();
+            this.buttonStepTwo = new System.Windows.Forms.Button();
+            this.buttonStepOne = new System.Windows.Forms.Button();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.textBoxOutPutForm = new System.Windows.Forms.TextBox();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.CssCol = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.InRow = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonStepTwo = new System.Windows.Forms.Button();
-            this.buttonStepOne = new System.Windows.Forms.Button();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.textBoxOutPutForm = new System.Windows.Forms.TextBox();
+            this.PlaceHolder = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewControls)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,55 +127,13 @@ namespace FormBuilder
             this.Title,
             this.Type,
             this.CssCol,
-            this.InRow});
+            this.InRow,
+            this.PlaceHolder});
             this.dataGridViewControls.Location = new System.Drawing.Point(435, 26);
             this.dataGridViewControls.Name = "dataGridViewControls";
             this.dataGridViewControls.RowTemplate.Height = 25;
-            this.dataGridViewControls.Size = new System.Drawing.Size(449, 379);
+            this.dataGridViewControls.Size = new System.Drawing.Size(720, 379);
             this.dataGridViewControls.TabIndex = 5;
-            // 
-            // Name
-            // 
-            this.Name.HeaderText = "Name";
-            this.Name.Name = "Name";
-            // 
-            // Title
-            // 
-            this.Title.HeaderText = "Title";
-            this.Title.Name = "Title";
-            // 
-            // Type
-            // 
-            this.Type.HeaderText = "Type";
-            this.Type.Items.AddRange(new object[] {
-            "TextBox",
-            "Select",
-            "Number",
-            "Date"});
-            this.Type.Name = "Type";
-            // 
-            // CssCol
-            // 
-            this.CssCol.HeaderText = "CssCol";
-            this.CssCol.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12"});
-            this.CssCol.Name = "CssCol";
-            // 
-            // InRow
-            // 
-            this.InRow.HeaderText = "InRow";
-            this.InRow.Name = "InRow";
             // 
             // buttonStepTwo
             // 
@@ -202,7 +161,7 @@ namespace FormBuilder
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSave.Location = new System.Drawing.Point(789, 409);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(95, 38);
+            this.buttonSave.Size = new System.Drawing.Size(366, 38);
             this.buttonSave.TabIndex = 6;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -216,14 +175,65 @@ namespace FormBuilder
             this.textBoxOutPutForm.Multiline = true;
             this.textBoxOutPutForm.Name = "textBoxOutPutForm";
             this.textBoxOutPutForm.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBoxOutPutForm.Size = new System.Drawing.Size(449, 309);
+            this.textBoxOutPutForm.Size = new System.Drawing.Size(720, 309);
             this.textBoxOutPutForm.TabIndex = 0;
+            // 
+            // Name
+            // 
+            this.Name.HeaderText = "Name";
+            this.Name.Name = "Name";
+            // 
+            // Title
+            // 
+            this.Title.HeaderText = "Title";
+            this.Title.Name = "Title";
+            // 
+            // Type
+            // 
+            this.Type.HeaderText = "Type";
+            this.Type.Items.AddRange(new object[] {
+            "TextBox",
+            "Select",
+            "Number",
+            "Date",
+            "CheckBox"});
+            this.Type.Name = "Type";
+            // 
+            // CssCol
+            // 
+            this.CssCol.HeaderText = "CssCol";
+            this.CssCol.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12"});
+            this.CssCol.Name = "CssCol";
+            // 
+            // InRow
+            // 
+            this.InRow.HeaderText = "InRow";
+            this.InRow.Name = "InRow";
+            // 
+            // PlaceHolder
+            // 
+            this.PlaceHolder.HeaderText = "PlaceHolder";
+            this.PlaceHolder.Name = "PlaceHolder";
+            this.PlaceHolder.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.PlaceHolder.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 765);
+            this.ClientSize = new System.Drawing.Size(1167, 765);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.dataGridViewControls);
             this.Controls.Add(this.listBoxItems);
@@ -255,13 +265,14 @@ namespace FormBuilder
         private System.Windows.Forms.DataGridView dataGridViewControls;
         private System.Windows.Forms.Button buttonStepTwo;
         private System.Windows.Forms.Button buttonStepOne;
+        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.TextBox textBoxOutPutForm;
         private System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
         private System.Windows.Forms.DataGridViewComboBoxColumn Type;
         private System.Windows.Forms.DataGridViewComboBoxColumn CssCol;
         private System.Windows.Forms.DataGridViewTextBoxColumn InRow;
-        private System.Windows.Forms.Button buttonSave;
-        private System.Windows.Forms.TextBox textBoxOutPutForm;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn PlaceHolder;
     }
 }
 

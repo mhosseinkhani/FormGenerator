@@ -13,6 +13,7 @@ namespace FormBuilder.Shared
             public ControlType Type { get; set; }
             public byte Col { get; set; }
             public byte Row { get; set; }
+            public bool  HavePlaceHolder{ get; set; }
 
         }
         public class StringToFormItems
@@ -54,6 +55,11 @@ namespace FormBuilder.Shared
                             .Replace(ControlConst.ControlTileString, p.Title)
                             .Replace(ControlConst.ControlColString, p.Col.ToString()));
                         break;
+                    case ControlType.CheckBox:
+                        result.Add(ControlConst.Date.Replace(ControlConst.ControlNameString, p.Name)
+                            .Replace(ControlConst.ControlTileString, p.Title)
+                            .Replace(ControlConst.ControlColString, p.Col.ToString()));
+                        break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
@@ -67,8 +73,11 @@ namespace FormBuilder.Shared
             {
                 "string"  => ControlType.TextBox,
                 "select" => ControlType.Select,
+                "0" => ControlType.Number,
                 "number" => ControlType.Number,
                 "date" => ControlType.Date,
+                "bool" => ControlType.CheckBox,
+                "boolean" => ControlType.CheckBox,
                 _ => ControlType.TextBox
             };
         }
@@ -79,7 +88,8 @@ namespace FormBuilder.Shared
         TextBox,
         Select,
         Number,
-        Date
+        Date,
+        CheckBox
     }
     public static class ControlConst
     {
@@ -125,6 +135,12 @@ namespace FormBuilder.Shared
         </div>
 ";
 
-
+        public const string CheckBox = @"  
+        <div class=""col-lg-#controlCol"">
+            <mat-checkbox formControlName=""includedInSanctionedPersonsList"">#controlTitle
+            </mat-checkbox>
+              <div class=""invalid-feedback"" *ngIf=""controlHasError('required', '#contorlName')"">فیلد اجباری می باشد</div>
+        </div>
+";
     }
 }

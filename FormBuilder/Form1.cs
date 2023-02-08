@@ -23,11 +23,13 @@ namespace FormBuilder
 
         private void buttonStepOne_Click(object sender, EventArgs e)
         {
+            listBoxItems.Items.Clear();
             var stepOne = txtBoxInput.Text
-                .Replace(",",";")
-                .Replace("\"", "")
-                .Replace("'", "")
-                .Split(";").ToArray();
+                 .Replace(",", ";")
+                 .Replace("\"", "")
+                 .Replace("'", "")
+                 .Replace(Environment.NewLine,"")
+                 .Split(";").ToArray();
             listBoxItems.Items.AddRange(stepOne);
 
         }
@@ -44,7 +46,14 @@ namespace FormBuilder
             {
                 if (string.IsNullOrEmpty(item.ToString())) continue;
 
-                var value = new string[] { item.ToString()?.Split(":")[0].Replace("\r\n", "").Trim(' '), item.ToString()?.Split(":")[0].Replace("\r\n", "").Trim(' '), item.ToString()?.Split(":")[1].Replace("\r\n", "").Trim(' ').GetControlType().ToString(), col.ToString(), row.ToString() };
+                var value = new string[] { 
+                    item.ToString()?.Split(":")[0].Replace("\r\n", "").Trim(' '),
+                    item.ToString()?.Split(":")[0].Replace("\r\n", "").Trim(' '), 
+                    item.ToString()?.Split(":")[1].Replace("\r\n", "").Trim(' ').GetControlType().ToString(), 
+                    col.ToString(), 
+                    row.ToString(),
+                    false.ToString(),
+                };
                 dataGridViewControls.Rows.Add(value);
                 if (colCount >= 12 / col)
                 {
@@ -59,6 +68,7 @@ namespace FormBuilder
 
         private void btnCommand_Click(object sender, EventArgs e)
         {
+            textBoxOutPutForm.Text = "";
             var formControls = new List<FormControlsMaker.FormControl>();
 
             foreach (DataGridViewRow row in dataGridViewControls.Rows)
@@ -72,7 +82,8 @@ namespace FormBuilder
                     Title = row.Cells["title"].Value.ToString(),
                     Col = Convert.ToByte(row.Cells["cssCol"].Value),
                     Name = row.Cells["name"].Value.ToString(),
-                    Row = Convert.ToByte(row.Cells["inRow"].Value)
+                    Row = Convert.ToByte(row.Cells["inRow"].Value),
+                    HavePlaceHolder = Convert.ToBoolean(row.Cells["placeHolder"].Value)
                 };
                 formControls.Add(formControl);
             }
@@ -86,15 +97,15 @@ namespace FormBuilder
                   txtBoxOutPutUi.Text += System.Environment.NewLine;
               });
 
-          
-            var resultForm=new List<string>();
+
+            var resultForm = new List<string>();
             formControls.ForEach(p =>
-            { 
+            {
                 var item =
                     $"{p.Name}:[this.model.{p.Name}]";
-               resultForm.Add(item);
+                resultForm.Add(item);
             });
-            textBoxOutPutForm.Text = string.Join(","+ System.Environment.NewLine, resultForm);
+            textBoxOutPutForm.Text = string.Join("," + System.Environment.NewLine, resultForm);
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
