@@ -42,11 +42,13 @@ namespace FormBuilder
             var row = 1;
             const int col = 4;
             var colCount = 1;
+            var i = 1;
             foreach (var item in selectedItems)
             {
                 if (string.IsNullOrEmpty(item.ToString())) continue;
 
                 var value = new string[] { 
+                    (i++).ToString(),
                     item.ToString()?.Split(":")[0].Replace("\r\n", "").Trim(' '),
                     item.ToString()?.Split(":")[0].Replace("\r\n", "").Trim(' '), 
                     item.ToString()?.Split(":")[1].Replace("\r\n", "").Trim(' ').GetControlType().ToString(), 
@@ -78,6 +80,7 @@ namespace FormBuilder
                 Enum.TryParse(row.Cells["type"].Value.ToString(), out ControlType myStatus);
                 var formControl = new FormControlsMaker.FormControl
                 {
+                    Order =Convert.ToInt32( row.Cells["order"].Value),
                     Type = myStatus,
                     Title = row.Cells["title"].Value.ToString(),
                     Col = Convert.ToByte(row.Cells["cssCol"].Value),
@@ -89,7 +92,7 @@ namespace FormBuilder
             }
 
             txtBoxOutPutUi.Text = "";
-            formControls.GroupBy(a => a.Row).ToList().ForEach(p =>
+            formControls.OrderBy(a=>a.Order).GroupBy(a => a.Row).ToList().ForEach(p =>
               {
                   txtBoxOutPutUi.Text += @"<div class=""form-group row"">";
                   txtBoxOutPutUi.Text += string.Join(System.Environment.NewLine, FormControlsMaker.MakeControls(p.ToArray()));

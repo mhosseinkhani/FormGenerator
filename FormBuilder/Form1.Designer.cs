@@ -42,6 +42,7 @@ namespace FormBuilder
             this.buttonStepOne = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.textBoxOutPutForm = new System.Windows.Forms.TextBox();
+            this.Order = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -121,8 +122,10 @@ namespace FormBuilder
             // 
             this.dataGridViewControls.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewControls.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewControls.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewControls.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Order,
             this.Name,
             this.Title,
             this.Type,
@@ -178,19 +181,28 @@ namespace FormBuilder
             this.textBoxOutPutForm.Size = new System.Drawing.Size(720, 309);
             this.textBoxOutPutForm.TabIndex = 0;
             // 
+            // Order
+            // 
+            this.Order.FillWeight = 40F;
+            this.Order.HeaderText = "ترتیب";
+            this.Order.Name = "Order";
+            // 
             // Name
             // 
-            this.Name.HeaderText = "Name";
+            this.Name.FillWeight = 89.54315F;
+            this.Name.HeaderText = "نام";
             this.Name.Name = "Name";
             // 
             // Title
             // 
-            this.Title.HeaderText = "Title";
+            this.Title.FillWeight = 89.54315F;
+            this.Title.HeaderText = "عنوان نمایشی";
             this.Title.Name = "Title";
             // 
             // Type
             // 
-            this.Type.HeaderText = "Type";
+            this.Type.FillWeight = 89.54315F;
+            this.Type.HeaderText = "نوع";
             this.Type.Items.AddRange(new object[] {
             "TextBox",
             "Select",
@@ -201,6 +213,8 @@ namespace FormBuilder
             // 
             // CssCol
             // 
+            this.CssCol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.CssCol.FillWeight = 60F;
             this.CssCol.HeaderText = "CssCol";
             this.CssCol.Items.AddRange(new object[] {
             "1",
@@ -216,18 +230,25 @@ namespace FormBuilder
             "11",
             "12"});
             this.CssCol.Name = "CssCol";
+            this.CssCol.Width = 60;
             // 
             // InRow
             // 
-            this.InRow.HeaderText = "InRow";
+            this.InRow.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.InRow.FillWeight = 50F;
+            this.InRow.HeaderText = "ردیف";
             this.InRow.Name = "InRow";
+            this.InRow.Width = 50;
             // 
             // PlaceHolder
             // 
+            this.PlaceHolder.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.PlaceHolder.FillWeight = 70F;
             this.PlaceHolder.HeaderText = "PlaceHolder";
             this.PlaceHolder.Name = "PlaceHolder";
             this.PlaceHolder.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.PlaceHolder.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.PlaceHolder.Width = 70;
             // 
             // FormMain
             // 
@@ -267,6 +288,7 @@ namespace FormBuilder
         private System.Windows.Forms.Button buttonStepOne;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.TextBox textBoxOutPutForm;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Order;
         private System.Windows.Forms.DataGridViewTextBoxColumn Name;
         private System.Windows.Forms.DataGridViewTextBoxColumn Title;
         private System.Windows.Forms.DataGridViewComboBoxColumn Type;
